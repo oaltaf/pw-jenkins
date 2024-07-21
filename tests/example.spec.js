@@ -2,7 +2,7 @@
 const { test, expect } = require('@playwright/test');
 
 test('has title', async ({ page }) => {
-  test.setTimeout(120000);
+  // test.setTimeout(120000);
   await page.goto('https://playwright.dev/');
   await page.waitForTimeout(2000)
 
