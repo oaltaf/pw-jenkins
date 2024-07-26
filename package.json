@@ -2,7 +2,9 @@
   "name": "test-jenkins",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+        "test:e2e:all": "npx playwright test tests --project=all-browsers-and-tests"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

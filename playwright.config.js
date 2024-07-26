@@ -11,7 +11,7 @@ const { defineConfig, devices } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
-  testDir: './tests',
+  // testDir: './tests',
  timeout: 120000,
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -39,15 +39,35 @@ module.exports = defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
+
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      name: 'all-browsers-and-tests',
+      use:{
+        baseURL: "https://playwright.dev/",
+        ...devices['Desktop Chrome'] 
+      }
     },
 
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      name: 'all-browsers-and-tests',
+      use:{
+        baseURL: "https://playwright.dev/",
+        ...devices['Desktop Firefox'] 
+      }
     },
+
+
+
+
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
+
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {
