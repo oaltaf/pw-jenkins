@@ -7,6 +7,12 @@ const { defineConfig, devices } = require('@playwright/test');
  */
 // require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 
+const currentDateTime = new Date()
+  .toISOString()
+  .replace(/[:.]/g, "_")
+  .slice(0, -1);
+const outputFolder = `./results/results-${currentDateTime}`;
+
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
@@ -23,6 +29,7 @@ module.exports = defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
+  // reporter: ["html", { outputFolder }, { open: "always" }],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
