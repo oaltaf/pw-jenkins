@@ -1,4 +1,5 @@
-let arry = ["a","b","c","d","e","f","g","h"];
+// let arry = ["a","b","c","d","e","f","g","h", "i"];
+let arry = 1;
 
 let a = arry.length;
 
